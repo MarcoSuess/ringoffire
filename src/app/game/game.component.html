@@ -1,6 +1,7 @@
 <app-player
   *ngFor="let player of game?.player; let i = index"
-  [ngStyle]="{ 'top.px': 100 + (i * 120 )}"
+  [ngStyle]="{ 'top.px': 100 + i * 90 }"
+  [playerActive]="i == game?.currentPlayer"
   [name]="player"
   class="playerPosition"
 ></app-player>
@@ -38,4 +39,18 @@
       src="assets/cards/{{ currentCard }}.png"
     />
   </div>
+
+  <button
+    (click)="openDialog()"
+    class="btn-add"
+    mat-fab
+    color="primary"
+    aria-label="Example icon button with a delete icon"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
+
+  
+
 </div>
+<app-game-info></app-game-info>
