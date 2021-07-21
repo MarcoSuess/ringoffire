@@ -1,5 +1,6 @@
+import { INT_TYPE } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { Game } from 'src/models/game';
 import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
 
@@ -25,9 +26,17 @@ export class GameComponent implements OnInit {
   }
 
   takeCard() {
-    if (!this.pickCardAnimation) {
+    if (!this.pickCardAnimation && this.game) {
       this.currentCard = this.game?.stack.pop();
       this.pickCardAnimation = true;
+
+      this.game.currentPlayer++;
+
+      this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
+
+      console.log(this.game.players.length)
+      
+      console.log(  this.game.currentPlayer)
 
       setTimeout(() => {
         this.game?.playedCards.push(this.currentCard as string);
@@ -40,7 +49,7 @@ export class GameComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogAddPlayerComponent);
 
     dialogRef.afterClosed().subscribe((name: string) => {
-      this.game?.player.push(name)
+      this.game?.players.push(name);
     });
   }
 }
