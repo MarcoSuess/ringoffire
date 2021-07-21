@@ -1,8 +1,7 @@
-import { INT_TYPE } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Game } from 'src/models/game';
-import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
+import { DialogOverviewExampleDialog } from '../dialog-add-player/dialog-add-player.component';
 
 @Component({
   selector: 'app-game',
@@ -34,9 +33,7 @@ export class GameComponent implements OnInit {
 
       this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
 
-      console.log(this.game.players.length)
-      
-      console.log(  this.game.currentPlayer)
+   
 
       setTimeout(() => {
         this.game?.playedCards.push(this.currentCard as string);
@@ -46,10 +43,13 @@ export class GameComponent implements OnInit {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogAddPlayerComponent);
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog);
 
+  
     dialogRef.afterClosed().subscribe((name: string) => {
-      this.game?.players.push(name);
+      if(name && name.length > 0) {
+        this.game?.players.push(name);
+      }
     });
   }
 }
