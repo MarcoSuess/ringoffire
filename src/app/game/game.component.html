@@ -33,10 +33,10 @@
     <!--  Current card (Animation) -->
     <img
       (click)="takeCard()"
-      *ngIf="pickCardAnimation"
+      *ngIf="game.pickCardAnimation"
       class="pickCard"
       style="right: 25px"
-      src="assets/cards/{{ currentCard }}.png"
+      src="assets/cards/{{ game.currentCard }}.png"
     />
   </div>
 
@@ -53,4 +53,4 @@
   
 
 </div>
-<app-game-info [card]="currentCard" class="pinBottom"></app-game-info>
+<app-game-info [card]="game.currentCard" class="pinBottom"></app-game-info>
