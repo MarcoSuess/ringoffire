@@ -15,12 +15,16 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { GameInfoComponent } from './game-info/game-info.component';
-/* import { environment } from '../environments/environment'; */
-/* import { PlayerMobileComponent } from './player-mobile/player-mobile.component';
-import { EditPlayerComponent } from './edit-player/edit-player.component';
-import { GameInfoComponent } from './game-info/game-info.component';
 import { AngularFireModule } from '@angular/fire';
- */
+import { environment } from '../environments/environment';
+
+
+
+
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,12 +33,9 @@ import { AngularFireModule } from '@angular/fire';
     PlayerComponent,
     DialogOverviewExampleDialog,
     GameInfoComponent,
- /*    GameInfoComponent,
-    PlayerMobileComponent,
-    EditPlayerComponent */
   ],
   imports: [
-/*     AngularFireModule.initializeApp(environment.firebase), */
+    AngularFireModule.initializeApp(environment.firebase),
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -46,6 +47,6 @@ import { AngularFireModule } from '@angular/fire';
     BrowserAnimationsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

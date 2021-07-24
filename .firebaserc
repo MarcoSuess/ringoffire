@@ -1,0 +1,39 @@
+{
+  "targets": {
+    "ring-of-fire-54d87": {
+      "hosting": {
+        "ringoffire": [
+          "ring-of-fire-54d87"
+        ]
+      }
+    },
+    "ring-of-fire-44c7a": {
+      "hosting": {
+        "ringoffire": [
+          "ring-of-fire-44c7a"
+        ]
+      }
+    },
+    "asddsf": {
+      "hosting": {
+        "ringoffire": [
+          "asddsf"
+        ]
+      }
+    },
+    "fir-demo-project": {
+      "hosting": {
+        "ringoffire": [
+          "fir-demo-project"
+        ]
+      }
+    },
+    "ring-of-fire-57662": {
+      "hosting": {
+        "ringoffire": [
+          "ring-of-fire-57662"
+        ]
+      }
+    }
+  }
+}
