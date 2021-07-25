@@ -11,9 +11,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./game.component.scss'],
 })
 export class GameComponent implements OnInit {
-
   game: Game | any;
-  gameId: undefined;
+  gameId: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -46,20 +45,20 @@ export class GameComponent implements OnInit {
 
   newGame() {
     this.game = new Game();
-    console.log(this.game);
   }
 
   takeCard() {
-    if (!this.game.pickCardAnimation && this.game) {
-      this.game.currentCard = this.game?.stack.pop();
+    if (!this.game.pickCardAnimation) {
+      this.game.currentCard = this.game.stack.pop();
       this.game.pickCardAnimation = true;
       this.game.currentPlayer++;
-      this.game.currentPlayer =
-      this.game.currentPlayer % this.game.players.length;
+      this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
+
+
       this.saveGame();
 
       setTimeout(() => {
-        this.game?.playedCards.push(this.game.currentCard as string);
+        this.game.playedCards.push(this.game.currentCard as string);
         this.game.pickCardAnimation = false;
         this.saveGame();
       }, 1000);
