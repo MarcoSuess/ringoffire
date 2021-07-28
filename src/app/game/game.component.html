@@ -1,8 +1,10 @@
 <app-player
+  (click)="openSelectContainer(i)"
   *ngFor="let player of game.players; let i = index"
   [ngStyle]="{ 'top.px': 100 + i * 90 }"
   [playerActive]="i == game.currentPlayer"
   [name]="player"
+  [playerImage]="game.playerImages[i]"
   class="playerPosition"
 ></app-player>
 
@@ -49,8 +51,5 @@
   >
     <mat-icon>add</mat-icon>
   </button>
-
-  
-
 </div>
 <app-game-info [card]="game.currentCard" class="pinBottom"></app-game-info>

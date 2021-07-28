@@ -17,6 +17,7 @@ import { MatCardModule } from '@angular/material/card';
 import { GameInfoComponent } from './game-info/game-info.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
+import { DialogImgSelectComponent } from './dialog-img-select/dialog-img-select.component';
 
 
 
@@ -33,6 +34,7 @@ import { environment } from '../environments/environment';
     PlayerComponent,
     DialogOverviewExampleDialog,
     GameInfoComponent,
+    DialogImgSelectComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

@@ -46,5 +46,17 @@
     "inquirer-autocomplete-prompt": "^1.0.1",
     "open": "^7.0.3",
     "jsonc-parser": "^3.0.0"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcoSuess/ringoffire.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcoSuess/ringoffire/issues"
+  },
+  "homepage": "https://github.com/MarcoSuess/ringoffire#readme"
 }

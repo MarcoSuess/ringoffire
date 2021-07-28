@@ -1,0 +1,15 @@
+.imgContainer {
+
+    
+    img  {
+        cursor: pointer;
+        width: 5vw;
+        object-fit: cover;
+      
+        &:hover {
+            filter: brightness(1.15);
+        }
+    }
+}
+
+

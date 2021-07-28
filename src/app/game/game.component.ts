@@ -4,7 +4,7 @@ import { Game } from 'src/models/game';
 import { DialogOverviewExampleDialog } from '../dialog-add-player/dialog-add-player.component';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ActivatedRoute } from '@angular/router';
-
+import { DialogImgSelectComponent } from '../dialog-img-select/dialog-img-select.component';
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -13,6 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export class GameComponent implements OnInit {
   game: Game | any;
   gameId: any;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -39,6 +40,7 @@ export class GameComponent implements OnInit {
           this.game.currentPlayer = game.currentPlayer;
           this.game.pickCardAnimation = game.pickCardAnimation;
           this.game.currentCard = game.currentCard;
+          this.game.playerImages = game.playerImages;
         });
     });
   }
@@ -48,6 +50,8 @@ export class GameComponent implements OnInit {
   }
 
   takeCard() {
+ 
+  
     if (!this.game.pickCardAnimation) {
       this.game.currentCard = this.game.stack.pop();
       this.game.pickCardAnimation = true;
@@ -65,16 +69,40 @@ export class GameComponent implements OnInit {
     }
   }
 
+  openSelectContainer(playerID: number)  {
+      
+    console.log(playerID);
+    
+    const dialogRef = this.dialog.open(DialogImgSelectComponent);
+
+    dialogRef.afterClosed().subscribe((img: string) => {
+        if(img == 'delete') {
+          this.game.playerImages.splice(playerID, 1)
+          this.game.players.splice(playerID, 1)
+          this.saveGame();
+        } else if (img) {
+          this.game.playerImages[playerID] = img;
+          this.saveGame();
+        }
+    
+  
+    });
+  
+     
+  }
+
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog);
 
     dialogRef.afterClosed().subscribe((name: string) => {
       if (name && name.length > 0) {
         this.game?.players.push(name);
+        this.game.playerImages.push('assets/profile/1.webp')
         this.saveGame();
       }
     });
   }
+
 
   saveGame() {
     this.firestore

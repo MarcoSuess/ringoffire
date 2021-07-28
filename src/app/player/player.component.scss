@@ -4,6 +4,13 @@ width: 30vw;
   align-items: center;
   border-radius: 50px 0 0 50px;
 
+  
+
+  img:hover {
+    filter: brightness(1.15) ;
+  
+  }
+
   span {
     font-size: 1.5em;
     margin-left: 2vw;
@@ -15,7 +22,10 @@ width: 30vw;
     height: 70px;
     object-fit: cover;
     border-radius: 100%;
+    cursor: pointer;
   }
+
+ 
 }
 
 .playerActive {
