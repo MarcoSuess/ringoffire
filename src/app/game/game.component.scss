@@ -123,6 +123,7 @@
     width: 10vw;
     height: auto;
     margin-top: 2vh;
+    background-color: #009688 !important;
 
     @media (max-width: 1000px) {
       width: 25vw;
@@ -180,4 +181,11 @@
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #ff9800;
   }
+}
+.preloadImage {
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+ 
 }
