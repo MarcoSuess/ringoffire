@@ -11,6 +11,7 @@
     img {
         object-fit: cover;
         height: 100vh;
+        max-width: 100%;
     }
 }
 
@@ -30,6 +31,10 @@
     img {
         height: 10vh;
         object-fit: cover;
+
+        @media (max-width: 1000px) {
+            height: 9vh;
+        }
 
         &:hover {
             filter: brightness(1.25);

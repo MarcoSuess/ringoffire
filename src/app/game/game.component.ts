@@ -13,7 +13,7 @@ import { DialogImgSelectComponent } from '../dialog-img-select/dialog-img-select
 export class GameComponent implements OnInit {
   game: Game | any;
   gameId: any;
-
+  gameOver: Boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -50,14 +50,18 @@ export class GameComponent implements OnInit {
   }
 
   takeCard() {
- 
-  
-    if (!this.game.pickCardAnimation) {
+    if(this.game.stack.length == 0) {
+      console.log('GameOver');
+      this.gameOver = true;
+      
+    }
+     else if (!this.game.pickCardAnimation && this.game.players.length > 0) {
       this.game.currentCard = this.game.stack.pop();
       this.game.pickCardAnimation = true;
-      this.game.currentPlayer++;
-      this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
 
+      this.game.currentPlayer++;
+      this.game.currentPlayer =
+        this.game.currentPlayer % this.game.players.length;
 
       this.saveGame();
 
@@ -69,26 +73,20 @@ export class GameComponent implements OnInit {
     }
   }
 
-  openSelectContainer(playerID: number)  {
-      
+  openSelectContainer(playerID: number) {
     console.log(playerID);
-    
+
     const dialogRef = this.dialog.open(DialogImgSelectComponent);
 
     dialogRef.afterClosed().subscribe((img: string) => {
-        if(img == 'delete') {
-          this.game.playerImages.splice(playerID, 1)
-          this.game.players.splice(playerID, 1)
-          this.saveGame();
-        } else if (img) {
-          this.game.playerImages[playerID] = img;
-          this.saveGame();
-        }
-    
-  
+      if (img == 'delete') {
+        this.game.playerImages.splice(playerID, 1);
+        this.game.players.splice(playerID, 1);
+      } else if (img) {
+        this.game.playerImages[playerID] = img;
+      }
+      this.saveGame();
     });
-  
-     
   }
 
   openDialog(): void {
@@ -97,12 +95,11 @@ export class GameComponent implements OnInit {
     dialogRef.afterClosed().subscribe((name: string) => {
       if (name && name.length > 0) {
         this.game?.players.push(name);
-        this.game.playerImages.push('assets/profile/1.webp')
+        this.game.playerImages.push('assets/profile/1.webp');
         this.saveGame();
       }
     });
   }
-
 
   saveGame() {
     this.firestore

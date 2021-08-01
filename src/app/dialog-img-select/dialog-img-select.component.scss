@@ -3,8 +3,18 @@
     
     img  {
         cursor: pointer;
-        width: 5vw;
+        width: 7vw;
+        height: auto;
         object-fit: cover;
+
+        
+        @media (max-width: 1000px) {
+            width: 12vw;
+        }
+
+        @media (max-width: 600px) {
+            width: 20vw;
+        }
       
         &:hover {
             filter: brightness(1.15);
