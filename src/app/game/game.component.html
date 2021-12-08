@@ -7,9 +7,11 @@
     [playerImage]="game.playerImages[i]"
     class="playerPosition hide-mobile"
   ></app-player>
+
 </div>
 
 <div class="appPlayerMobileContainer">
+
   <app-player-mobile
     (click)="openSelectContainer(i)"
     *ngFor="let player of game.players; let i = index"
@@ -20,11 +22,14 @@
     class="hide-desktop"
   >
   </app-player-mobile>
+
 </div>
 
 <div class="field">
+
   <div class="cardStack">
     <!-- Card stack -->
+
     <img
       *ngFor="let c of [1, 2, 3, 4]; let i = index"
       [ngStyle]="{ 'right.px': i * 5 }"
@@ -32,6 +37,7 @@
     />
 
     <!-- Top Card on stack -->
+
     <img
       (click)="takeCard()"
       class="topCard"
@@ -40,6 +46,7 @@
     />
 
     <!-- Stack for played Cards -->
+
     <img
       *ngFor="let card of game.playedCards"
       class="playedCards"
@@ -47,6 +54,7 @@
     />
 
     <!--  Current card (Animation) -->
+
     <img
       (click)="takeCard()"
       *ngIf="game.pickCardAnimation"
@@ -54,6 +62,7 @@
       style="right: 25px"
       src="assets/cards/{{ game.currentCard }}.png"
     />
+
   </div>
 
   <button
@@ -64,9 +73,13 @@
     color="primary"
     aria-label="Example icon button with a delete icon"
   >
+
     <mat-icon>add</mat-icon>
+
   </button>
+
 </div>
+
 <app-game-info
   *ngIf="!gameOver"
   [card]="game.currentCard"
@@ -78,4 +91,7 @@
   <button routerLink="/" mat-fab>PLAY AGAIN</button>
 </div>
 
-<img class="preloadImage"src="assets/cards/{{game.stack[game.stack.length -1]}}.png" >
+<img
+  class="preloadImage"
+  src="assets/cards/{{ game.stack[game.stack.length - 1] }}.png"
+/>

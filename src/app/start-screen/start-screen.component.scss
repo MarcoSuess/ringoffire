@@ -1,44 +1,43 @@
 .startScreen {
-    background-color: #404040;
-    width: 100vw;
+  background-color: #404040;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    object-fit: cover;
     height: 100vh;
     max-width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    img {
-        object-fit: cover;
-        height: 100vh;
-        max-width: 100%;
-    }
+  }
 }
 
- @media (max-width: 960px) {
-     
- }
+@media (max-width: 960px) {
+}
 
 .startLabelBox {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 15vh;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 15vh;
 
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 
-    img {
-        height: 10vh;
-        object-fit: cover;
+  img {
+    height: 10vh;
+    object-fit: cover;
 
-        @media (max-width: 1000px) {
-            height: 9vh;
-        }
-
-        &:hover {
-            filter: brightness(1.25);
-            cursor: pointer;
-        }
+    @media (max-width: 1000px) {
+      height: 9vh;
     }
+
+    &:hover {
+      filter: brightness(1.25);
+      cursor: pointer;
+    }
+  }
 }

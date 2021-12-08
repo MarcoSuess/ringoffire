@@ -20,7 +20,7 @@ export class DialogImgSelectComponent implements OnInit {
   ngOnInit(): void {}
 
   constructor(public dialogRef: MatDialogRef<DialogImgSelectComponent>) {}
-
+  
   onNoClick(): void {
     this.dialogRef.close();
   }

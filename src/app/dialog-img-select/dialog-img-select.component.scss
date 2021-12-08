@@ -1,25 +1,20 @@
 .imgContainer {
+  img {
+    cursor: pointer;
+    width: 7vw;
+    height: auto;
+    object-fit: cover;
 
-    
-    img  {
-        cursor: pointer;
-        width: 7vw;
-        height: auto;
-        object-fit: cover;
-
-        
-        @media (max-width: 1000px) {
-            width: 12vw;
-        }
-
-        @media (max-width: 600px) {
-            width: 20vw;
-        }
-      
-        &:hover {
-            filter: brightness(1.15);
-        }
+    @media (max-width: 1000px) {
+      width: 12vw;
     }
+
+    @media (max-width: 600px) {
+      width: 20vw;
+    }
+
+    &:hover {
+      filter: brightness(1.15);
+    }
+  }
 }
-
-

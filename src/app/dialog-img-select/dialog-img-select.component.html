@@ -6,12 +6,18 @@
       *ngFor="let image of profileImages"
       [mat-dialog-close]="image"
       src="{{ image }}"
-      
     />
   </div>
 
   <div mat-dialog-actions>
     <button mat-button (click)="onNoClick()">Close</button>
-    <button mat-button color="warn"  [mat-dialog-close]="'delete'" cdkFocusInitial>Delete</button>
+    <button
+      mat-button
+      color="warn"
+      [mat-dialog-close]="'delete'"
+      cdkFocusInitial
+    >
+      Delete
+    </button>
   </div>
 </div>

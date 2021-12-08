@@ -24,6 +24,11 @@ export class GameComponent implements OnInit {
   ngOnInit(): void {
     this.newGame();
 
+    /**
+     * Generates a new game.
+     *
+     * @param {string} params  - This is the params from the route.
+     */
     this.route.params.subscribe((params) => {
       console.log(params.id);
       this.gameId = params.id;
@@ -32,8 +37,6 @@ export class GameComponent implements OnInit {
         .doc(this.gameId)
         .valueChanges()
         .subscribe((game: any) => {
-          console.log('Game update', game);
-
           this.game.players = game.players;
           this.game.stack = game.stack;
           this.game.playedCards = game.playedCards;
@@ -45,24 +48,25 @@ export class GameComponent implements OnInit {
     });
   }
 
+  /**
+   * declared a new game.
+   */
   newGame() {
     this.game = new Game();
   }
 
+  /**
+   * This function take a new card and checked the card stack for GameOver.
+   */
   takeCard() {
-    if(this.game.stack.length == 0) {
-      console.log('GameOver');
+    if (this.game.stack.length == 0) {
       this.gameOver = true;
-      
-    }
-     else if (!this.game.pickCardAnimation && this.game.players.length > 0) {
+    } else if (!this.game.pickCardAnimation && this.game.players.length > 0) {
       this.game.currentCard = this.game.stack.pop();
       this.game.pickCardAnimation = true;
-
       this.game.currentPlayer++;
       this.game.currentPlayer =
         this.game.currentPlayer % this.game.players.length;
-
       this.saveGame();
 
       setTimeout(() => {
@@ -73,9 +77,12 @@ export class GameComponent implements OnInit {
     }
   }
 
+  /**
+   * This function open the dialog and delete the player after closed if returns delete as string.
+   *
+   * @param {number} playerID - This is the ID from the picked player.
+   */
   openSelectContainer(playerID: number) {
-    console.log(playerID);
-
     const dialogRef = this.dialog.open(DialogImgSelectComponent);
 
     dialogRef.afterClosed().subscribe((img: string) => {
@@ -89,7 +96,11 @@ export class GameComponent implements OnInit {
     });
   }
 
-  openDialog(): void {
+
+  /**
+   * This function open the Dialog and safe the user name and img. 
+   */
+  openDialog() {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog);
 
     dialogRef.afterClosed().subscribe((name: string) => {
@@ -101,6 +112,9 @@ export class GameComponent implements OnInit {
     });
   }
 
+  /**
+   * This function save the Game.
+   */
   saveGame() {
     this.firestore
       .collection('games')

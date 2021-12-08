@@ -64,6 +64,10 @@ export class GameInfoComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {}
 
+
+/**
+ * this function fetch the card number for the index.
+ */
   ngOnChanges(): void {
     if (this.card) {
       let cardNumber = Number(this.card?.split('_')[1]);
