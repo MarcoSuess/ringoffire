@@ -18,6 +18,10 @@ export class Game {
     shuffle(this.stack);
   }
 
+  /**
+   * This function return the class to json.
+   * @returns {json}
+   */
   public toJson() {
     return {
       players: this.players,
@@ -31,6 +35,13 @@ export class Game {
   }
 }
 
+
+/**
+ * This function shuffle the cards.
+ * 
+ * @param array - This is the stack of cards.
+ * @returns {array}
+ */
 function shuffle(array: string[]) {
   var currentIndex = array.length,
     randomIndex;

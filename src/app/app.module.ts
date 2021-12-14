@@ -19,6 +19,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { DialogImgSelectComponent } from './dialog-img-select/dialog-img-select.component';
 import { PlayerMobileComponent } from './player-mobile/player-mobile.component';
+import { DialogInfoComponent } from './dialog-info/dialog-info.component';
 
 
 
@@ -37,6 +38,7 @@ import { PlayerMobileComponent } from './player-mobile/player-mobile.component';
     GameInfoComponent,
     DialogImgSelectComponent,
     PlayerMobileComponent,
+    DialogInfoComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
