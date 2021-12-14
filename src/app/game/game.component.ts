@@ -5,6 +5,7 @@ import { DialogOverviewExampleDialog } from '../dialog-add-player/dialog-add-pla
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ActivatedRoute } from '@angular/router';
 import { DialogImgSelectComponent } from '../dialog-img-select/dialog-img-select.component';
+import { DialogInfoComponent } from '../dialog-info/dialog-info.component';
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -61,12 +62,11 @@ export class GameComponent implements OnInit {
   takeCard() {
     if (this.game.stack.length == 0) {
       this.gameOver = true;
-    } else if (!this.game.pickCardAnimation && this.game.players.length > 0) {
+    } else if (!this.game.pickCardAnimation && this.game.players.length > 1) {
       this.game.currentCard = this.game.stack.pop();
       this.game.pickCardAnimation = true;
       this.game.currentPlayer++;
-      this.game.currentPlayer =
-        this.game.currentPlayer % this.game.players.length;
+      this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
       this.saveGame();
 
       setTimeout(() => {
@@ -74,7 +74,11 @@ export class GameComponent implements OnInit {
         this.game.pickCardAnimation = false;
         this.saveGame();
       }, 1000);
+    }  else if(!this.game.pickCardAnimation && this.game.players.length < 2) {
+      this.dialog.open(DialogInfoComponent);
     }
+
+    
   }
 
   /**
