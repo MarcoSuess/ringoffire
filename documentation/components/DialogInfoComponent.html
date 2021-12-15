@@ -38,7 +38,7 @@
   <li>Components</li>
   <li
   >
-  StartScreenComponent</li>
+  DialogInfoComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -64,7 +64,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/start-screen/start-screen.component.ts</code>
+    <code>src/app/dialog-info/dialog-info.component.ts</code>
 </p>
 
 
@@ -95,19 +95,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-start-screen</code></td>
+                <td class="col-md-9"><code>app-dialog-info</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./start-screen.component.scss</code></td>
+                <td class="col-md-9"><code>./dialog-info.component.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./start-screen.component.html</code></td>
+                <td class="col-md-9"><code>./dialog-info.component.html</code></td>
             </tr>
 
 
@@ -135,9 +135,6 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#newGame" >newGame</a>
-                            </li>
-                            <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                         </ul>
@@ -158,57 +155,15 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(firestore: AngularFirestore, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor()</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/start-screen/start-screen.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/dialog-info/dialog-info.component.ts:8</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>firestore</td>
-                                                  
-                                                        <td>
-                                                                    <code>AngularFirestore</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>router</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
             </tbody>
         </table>
 </section>
@@ -222,45 +177,6 @@
     <h3 id="methods">
         Methods
     </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="newGame"></a>
-                    <span class="name">
-                        <span ><b>newGame</b></span>
-                        <a href="#newGame"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>newGame()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/start-screen/start-screen.component.ts:19</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Generate the structure for a new Game and navigate to new game url.</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -281,8 +197,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/start-screen/start-screen.component.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="12"
+                            class="link-to-prism">src/app/dialog-info/dialog-info.component.ts:12</a></div>
                 </td>
             </tr>
 
@@ -305,96 +221,32 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { AngularFirestore } from &#x27;@angular/fire/firestore&#x27;;
-import { Router } from &#x27;@angular/router&#x27;;
-import { Game } from &#x27;src/models/game&#x27;;
 
 @Component({
-  selector: &#x27;app-start-screen&#x27;,
-  templateUrl: &#x27;./start-screen.component.html&#x27;,
-  styleUrls: [&#x27;./start-screen.component.scss&#x27;],
+  selector: &#x27;app-dialog-info&#x27;,
+  templateUrl: &#x27;./dialog-info.component.html&#x27;,
+  styleUrls: [&#x27;./dialog-info.component.scss&#x27;]
 })
-export class StartScreenComponent implements OnInit {
-  constructor(private firestore: AngularFirestore, private router: Router) {}
+export class DialogInfoComponent implements OnInit {
 
-  ngOnInit(): void {}
+  constructor() { }
 
-  /**
-   * Generate the structure for a new Game and navigate to new game url.
-   */
-  newGame() {
-    let game &#x3D; new Game();
-
-    this.firestore
-      .collection(&#x27;games&#x27;)
-      .add(game.toJson())
-      .then((gameInfo: any) &#x3D;&gt; {
-        this.router.navigateByUrl(&#x27;/game/&#x27; + gameInfo.id);
-      });
+  ngOnInit(): void {
   }
+
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;startScreen&quot;&gt;
-  &lt;img src&#x3D;&quot;assets/startbox.png&quot; /&gt;
-
-  &lt;div class&#x3D;&quot;startLabelBox&quot;&gt;
-    &lt;img (click)&#x3D;&quot;newGame()&quot; src&#x3D;&quot;assets/startlabel.png&quot; /&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;h2&gt;You need at least 2 players, click on the button to add players&lt;/h2&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./start-screen.component.scss</code>
+                    <code>./dialog-info.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">.startScreen {
-  background-color: #404040;
-  width: 100vw;
-  height: 100vh;
-  max-width: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    object-fit: cover;
-    height: 100vh;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 960px) {
-}
-
-.startLabelBox {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 15vh;
-
-  display: flex;
-  justify-content: center;
-
-  img {
-    height: 10vh;
-    object-fit: cover;
-
-    @media (max-width: 1000px) {
-      height: 9vh;
-    }
-
-    &amp;:hover {
-      filter: brightness(1.25);
-      cursor: pointer;
-    }
-  }
-}
-</code></pre>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -422,10 +274,10 @@ export class StartScreenComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="startScreen">  <img src="assets/startbox.png" />  <div class="startLabelBox">    <img (click)="newGame()" src="assets/startlabel.png" />  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><h2>You need at least 2 players, click on the button to add players</h2></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DialogImgSelectComponent', 'selector': 'app-dialog-img-select'},{'name': 'DialogInfoComponent', 'selector': 'app-dialog-info'},{'name': 'DialogOverviewExampleDialog', 'selector': 'app-dialog-add-player'},{'name': 'GameComponent', 'selector': 'app-game'},{'name': 'GameInfoComponent', 'selector': 'app-game-info'},{'name': 'PlayerComponent', 'selector': 'app-player'},{'name': 'PlayerMobileComponent', 'selector': 'app-player-mobile'},{'name': 'StartScreenComponent', 'selector': 'app-start-screen'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'StartScreenComponent'};
+    var ACTUAL_COMPONENT = {'name': 'DialogInfoComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -469,7 +321,7 @@ export class StartScreenComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'StartScreenComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'DialogInfoComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

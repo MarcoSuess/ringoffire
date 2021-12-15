@@ -54,18 +54,21 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link" >AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-21ab66cc8ce6af414b2e2cca28ae19a9078703a3a4c4d70da2c21cc32f0bb9c7c65eb15d828a57ed60edc5af1f2b59fe0b86270d7d7ca0a501c3cf257a646673"' : 'data-target="#xs-components-links-module-AppModule-21ab66cc8ce6af414b2e2cca28ae19a9078703a3a4c4d70da2c21cc32f0bb9c7c65eb15d828a57ed60edc5af1f2b59fe0b86270d7d7ca0a501c3cf257a646673"' }>
+                                            'data-target="#components-links-module-AppModule-f7b66cab4ee84b0bac35b7bd48808f328f7988707dec76760e6fde28e9db1d5d30c4ce522485918aa37cd606c40d50f19411b62cd9347e163d5d13fc809a533e"' : 'data-target="#xs-components-links-module-AppModule-f7b66cab4ee84b0bac35b7bd48808f328f7988707dec76760e6fde28e9db1d5d30c4ce522485918aa37cd606c40d50f19411b62cd9347e163d5d13fc809a533e"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-21ab66cc8ce6af414b2e2cca28ae19a9078703a3a4c4d70da2c21cc32f0bb9c7c65eb15d828a57ed60edc5af1f2b59fe0b86270d7d7ca0a501c3cf257a646673"' :
-                                            'id="xs-components-links-module-AppModule-21ab66cc8ce6af414b2e2cca28ae19a9078703a3a4c4d70da2c21cc32f0bb9c7c65eb15d828a57ed60edc5af1f2b59fe0b86270d7d7ca0a501c3cf257a646673"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-f7b66cab4ee84b0bac35b7bd48808f328f7988707dec76760e6fde28e9db1d5d30c4ce522485918aa37cd606c40d50f19411b62cd9347e163d5d13fc809a533e"' :
+                                            'id="xs-components-links-module-AppModule-f7b66cab4ee84b0bac35b7bd48808f328f7988707dec76760e6fde28e9db1d5d30c4ce522485918aa37cd606c40d50f19411b62cd9347e163d5d13fc809a533e"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AppComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/DialogImgSelectComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DialogImgSelectComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/DialogInfoComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DialogInfoComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/DialogOverviewExampleDialog.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DialogOverviewExampleDialog</a>
